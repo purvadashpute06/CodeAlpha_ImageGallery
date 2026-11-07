@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A responsive image gallery with category filters and a lightbox.">
+  <title>Vista — Image Gallery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">V</span> vista<span class="dot">.</span></a>
+    <span class="top-note">A little inspiration, beautifully collected.</span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">THE VISUAL JOURNAL</p>
+      <h1>Find your <em>perspective.</em></h1>
+      <p class="intro">A curated collection of moments, places and details worth a second look.</p>
+    </section>
+
+    <section class="gallery-section" aria-label="Photo gallery">
+      <div class="gallery-toolbar">
+        <div>
+          <h2>Explore the collection</h2>
+          <p id="photo-count" class="photo-count">12 photographs</p>
+        </div>
+        <div class="filters" role="group" aria-label="Filter images">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="nature">Nature</button>
+          <button class="filter-btn" data-filter="architecture">Architecture</button>
+          <button class="filter-btn" data-filter="travel">Travel</button>
+        </div>
+      </div>
+
+      <div class="gallery-grid" id="gallery-grid">
+        <button class="photo-card tall" data-category="nature" data-title="Quiet mornings" data-location="Dolomites, Italy"><img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=900&q=85" alt="Mountain lake surrounded by green hills"><span class="photo-info"><b>Quiet mornings</b><small>Nature · Dolomites, Italy</small></span></button>
+        <button class="photo-card" data-category="architecture" data-title="Lines of light" data-location="Copenhagen, Denmark"><img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&q=85" alt="Modern architectural building"><span class="photo-info"><b>Lines of light</b><small>Architecture · Copenhagen</small></span></button>
+        <button class="photo-card" data-category="travel" data-title="Coastal escape" data-location="Amalfi Coast, Italy"><img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=900&q=85" alt="Colorful coastal Italian village"><span class="photo-info"><b>Coastal escape</b><small>Travel · Amalfi Coast</small></span></button>
+        <button class="photo-card" data-category="nature" data-title="Into the wild" data-location="Forest trail"><img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=900&q=85" alt="Sunlight passing through a forest"><span class="photo-info"><b>Into the wild</b><small>Nature · Forest trail</small></span></button>
+        <button class="photo-card wide" data-category="travel" data-title="Desert stories" data-location="Sahara, Morocco"><img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=1200&q=85" alt="Golden desert dunes"><span class="photo-info"><b>Desert stories</b><small>Travel · Sahara, Morocco</small></span></button>
+        <button class="photo-card" data-category="architecture" data-title="Urban geometry" data-location="City details"><img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=900&q=85" alt="Minimal white modern building"><span class="photo-info"><b>Urban geometry</b><small>Architecture · City details</small></span></button>
+        <button class="photo-card" data-category="nature" data-title="Soft horizons" data-location="Mountain range"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=85" alt="Snow covered mountain peaks"><span class="photo-info"><b>Soft horizons</b><small>Nature · Mountain range</small></span></button>
+        <button class="photo-card" data-category="travel" data-title="A new avenue" data-location="Paris, France"><img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=900&q=85" alt="Paris street with the Eiffel Tower in distance"><span class="photo-info"><b>A new avenue</b><small>Travel · Paris, France</small></span></button>
+        <button class="photo-card" data-category="architecture" data-title="Concrete poetry" data-location="Modern spaces"><img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=900&q=85" alt="Sculptural concrete architecture"><span class="photo-info"><b>Concrete poetry</b><small>Architecture · Modern spaces</small></span></button>
+        <button class="photo-card" data-category="nature" data-title="Ocean blues" data-location="Open sea"><img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=900&q=85" alt="Blue ocean waves"><span class="photo-info"><b>Ocean blues</b><small>Nature · Open sea</small></span></button>
+        <button class="photo-card" data-category="travel" data-title="Island rhythm" data-location="Mediterranean"><img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=900&q=85" alt="Mediterranean island coast"><span class="photo-info"><b>Island rhythm</b><small>Travel · Mediterranean</small></span></button>
+        <button class="photo-card" data-category="architecture" data-title="Golden structure" data-location="City skyline"><img src="https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=900&q=85" alt="City buildings in warm evening light"><span class="photo-info"><b>Golden structure</b><small>Architecture · City skyline</small></span></button>
+      </div>
+    </section>
+  </main>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="close-lightbox" aria-label="Close image">×</button>
+    <button class="lightbox-nav prev" id="prev-image" aria-label="Previous image">‹</button>
+    <figure>
+      <img id="lightbox-image" src="" alt="">
+      <figcaption><strong id="lightbox-title"></strong><span id="lightbox-location"></span></figcaption>
+    </figure>
+    <button class="lightbox-nav next" id="next-image" aria-label="Next image">›</button>
+  </div>
+
+  <footer>Made to look a little closer. <span>© 2026 Vista Gallery</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
